@@ -5,7 +5,7 @@ namespace DanieleTulone\MakeModel\Providers;
 use DanieleTulone\MakeModel\Console\Commands\ModelMakeCommand;
 use Illuminate\Support\ServiceProvider;
 
-class BaseCrudServiceProvider extends ServiceProvider
+class MakeModelServiceProvider extends ServiceProvider
 {
 
     /**
