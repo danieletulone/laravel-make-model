@@ -1,0 +1,31 @@
+{
+    "name": "danieletulone/laravel-make-model",
+    "keywords": [
+        "laravel",
+        "model",
+        "console",
+        "make"
+    ],
+    "authors": [
+        {
+            "name": "danieletulone",
+            "email": "danieletulone.work@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.2.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "DanieleTulone\\MakeModel\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DanieleTulone\\MakeModel\\Providers\\MakeModelServiceProvider"
+            ]
+        }
+    }
+}
