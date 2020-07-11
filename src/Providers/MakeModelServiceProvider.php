@@ -4,8 +4,10 @@ namespace DanieleTulone\MakeModel\Providers;
 
 use DanieleTulone\MakeModel\Console\Commands\ModelMakeCommand;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Contracts\Support\DeferrableProvider;
 
-class MakeModelServiceProvider extends ServiceProvider
+
+class MakeModelServiceProvider extends ServiceProvider implements DeferrableProvider
 {
 
     /**
@@ -13,12 +15,28 @@ class MakeModelServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot() 
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
                 ModelMakeCommand::class
             ]);
         }
+    }
+
+    public function register()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->app->extend('command.make.model', function () {
+                return new ModelMakeCommand;
+            });
+        }
+    }
+
+    public function provides()
+    {
+        return [
+            'command.make.model'
+        ];
     }
 }
