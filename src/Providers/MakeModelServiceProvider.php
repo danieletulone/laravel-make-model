@@ -12,6 +12,8 @@ class MakeModelServiceProvider extends ServiceProvider implements DeferrableProv
 
     /**
      * Bootstrap any application services.
+     * 
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
      *
      * @return void
      */
@@ -24,6 +26,13 @@ class MakeModelServiceProvider extends ServiceProvider implements DeferrableProv
         }
     }
 
+    /**
+     * Register any application services.
+     * 
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     *
+     * @return void
+     */
     public function register()
     {
         if ($this->app->runningInConsole()) {
@@ -33,6 +42,13 @@ class MakeModelServiceProvider extends ServiceProvider implements DeferrableProv
         }
     }
 
+    /**
+     * Provides services.
+     * 
+     * @author Daniele Tulone <danieletulone.work@gmail.com>
+     *
+     * @return void
+     */
     public function provides()
     {
         return [
